@@ -3,39 +3,46 @@ using System.Collections;
 
 public class Character : MonoBehaviour {
 
-	private float base_speed = 0.1f;
-	private float accel = 0f;
-	private float frictionRate = 2f; 
+	private float base_speed = 100f;
+	private float max_speed = 1;
+	private Rigidbody rb;
+	private bool jumping = false;
 
 	// Use this for initialization
-	void Start () {
-
+	void Awake () {
+	 rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-	float add;
-	if( Mathf.Abs( accel ) > 0f){
-	 if(accel > 0){
-		add = -Time.deltaTime;
-	 }else{
-		add = Time.deltaTime;
-	 }
-		accel += add * frictionRate;
-	 }
-
-	 Vector2 pos = transform.localPosition;
-	 Vector2 newPos = pos + Vector2.right * (this.accel * base_speed);
-	 transform.localPosition = newPos;
-
 	}
 
 	public void Jump(){
  	Debug.Log("Jump");
+ 	if(jumping){
+ 	  return;
+ 	}
+ 	 rb.AddForce(Vector2.up * 300f);
+ 	 jumping = true;
+ 	
 	}
 
 	public void Accel(float dir){
-	 this.accel = dir;
+	 Debug.Log(dir);
+	 rb.AddForce(Vector2.right * dir * base_speed);
+	 float velocityY = rb.velocity.y;
+	 if(rb.velocity.x > max_speed){
+	  rb.velocity = new Vector2(max_speed, velocityY);
+	 }else if(rb.velocity.x < -max_speed){
+	 	rb.velocity = new Vector2(-max_speed, velocityY);
+	 }
+	 
 	}
+
+ private void OnCollisionEnter(Collision col){
+  if(jumping){
+   jumping = false;
+  }
+ }
+
 }
