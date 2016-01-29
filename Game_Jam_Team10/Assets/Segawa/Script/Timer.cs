@@ -11,23 +11,24 @@ public class Timer : MonoBehaviour {
 	private Text textGUI;
 
 	// 現在の時間
-	private float _currentTime;
-	public float currentTime{
+	private int _currentTime = 24;
+	public int currentTime{
 		get{
 			return _currentTime;
 		}
 	}
 
-	[Header("初期時間")]
-	public float initTime = 120.0f;
+	// 内部時間.
+	private float innerTime;
 
 	[Header("タイマーの処理を止める.")]
 	private bool isStop;
 
+	[Header("1時間経つ秒数")]
+	public float EveryHourTime;
+
 	void Start(){
 		this.textGUI = transform.GetComponentInChildren<Text> ();
-
-		_currentTime = initTime;
 	}
 
 	void Update(){
@@ -41,10 +42,19 @@ public class Timer : MonoBehaviour {
 
 	void Tick(){
 
-		_currentTime -= Time.deltaTime;
-		_currentTime = Mathf.Clamp (_currentTime, 0.0f, initTime);
-		if (_currentTime <= 0.0f) {
-			TimeEnd ();
+		innerTime += Time.deltaTime;
+		if (innerTime >= EveryHourTime) {
+			if (_currentTime == 24) {
+				_currentTime = 0;
+			} else {
+				_currentTime += 1;
+			}
+
+			innerTime = 0.0f;
+
+			if (_currentTime == 8) {
+				TimeEnd ();
+			}
 		}
 
 	}
@@ -70,7 +80,7 @@ public class Timer : MonoBehaviour {
 	/// </summary>
 	void UpdateUI(){
 
-		textGUI.text = "Time:" + _currentTime.ToString ("F");
+		textGUI.text = _currentTime.ToString () + "時";
 
 	}
 
