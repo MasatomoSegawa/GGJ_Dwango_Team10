@@ -24,9 +24,10 @@ public class Quest : MonoBehaviour {
 
 	void Update(){
 
+		/*
 		if (Input.GetKeyDown (KeyCode.A)) {
 			ReduceRitualOfNumber (1);
-		}
+		}*/
 
 	}
 
