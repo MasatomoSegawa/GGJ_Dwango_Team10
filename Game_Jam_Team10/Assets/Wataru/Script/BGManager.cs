@@ -49,6 +49,10 @@ private Transform target;
 
 	//Debug.Log( time_info.EveryHourTime );
 
+	FadePrevImage();
+
+
+
 	if(image_idx >= images.Length){
 	return;
 	}
@@ -78,8 +82,32 @@ private Transform target;
 		if(image_idx >= images.Length){
 	     return;
 	    }
+
 		foreach(SpriteRenderer s in bgImage){
+		 GameObject obj = new GameObject();
+		 obj.transform.SetParent( s.transform );
+		 obj.transform.localPosition = Vector3.back * 0.1f;
+		 obj.transform.localScale = Vector3.one;
+		 SpriteRenderer sr = obj.AddComponent<SpriteRenderer>();
+		 sr.sprite = s.sprite;
 		 s.sprite = images[image_idx];
 		}
+	}
+
+	private void FadePrevImage(){
+
+	foreach(SpriteRenderer s in bgImage){
+	 if(s.transform.childCount >= 1){
+	  Color col = s.transform.GetChild(0).GetComponent<SpriteRenderer>().material.color;
+	  float alpha = col.a -= Time.deltaTime;
+	  if(alpha <= 0){
+	   Destroy(s.transform.GetChild(0).gameObject);
+	  }else{
+	   Color newCol = new Color(1f,1f,1f,alpha);
+	   s.transform.GetChild(0).GetComponent<SpriteRenderer>().material.color = newCol;
+	  }
+	 }
+	}
+
 	}
 }

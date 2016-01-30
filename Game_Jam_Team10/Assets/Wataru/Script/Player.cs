@@ -37,6 +37,13 @@ public override void ExecuteAttack ()
   }
  }
 
+	public override void ApplyDamage(int val){
+base.ApplyDamage(val);
+
+// play se
+ SoundManager.Instance.PlaySE(2);
+	}
+
 	protected override void OnTriggerEnter(Collider col){
 
 	if(col.gameObject.tag.Equals("DeadZone")){

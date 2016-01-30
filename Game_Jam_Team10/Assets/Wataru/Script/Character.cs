@@ -38,11 +38,9 @@ public class Character : MonoBehaviour {
 			damage_wait -= Time.deltaTime;
 	 }
 
-//	 Debug.Log(rb.velocity);
-
 	 // tmp
 	 Vector3 scl = this.transform.localScale;
-	 Vector3 newScl = new Vector3 (flipRight ? 1f : -1f, 1f, 1f);
+	 Vector3 newScl = new Vector3 ( (flipRight ? 1f : -1f), 1f, 1f);
 	 this.transform.localScale = newScl; 
 
 	}
@@ -53,20 +51,25 @@ public class Character : MonoBehaviour {
  	 }
 	 Debug.Log("Jump");
 
+	 // play se
 	 SoundManager.Instance.PlaySE(0);
+
 	 rb.AddForce(Vector2.up * jump_force);
  	 jumping = true;
  	
 	}
 
-	public  void Attack(){
+	public virtual void Attack(){
 		if(attack_wait > 0){
  	  return;
  	 }
 
  	 ExecuteAttack();
  	 attack_wait = attack_interval;
- 	
+
+
+	 // play se
+	 SoundManager.Instance.PlaySE(1);
 	}
 
 	public virtual void ExecuteAttack(){
@@ -91,7 +94,7 @@ public class Character : MonoBehaviour {
 	 
 	}
 
-	public void ApplyDamage(int val){
+	public virtual void ApplyDamage(int val){
 	 health -= val;
 	 if( health < 0 ){
 	 health = 0;
