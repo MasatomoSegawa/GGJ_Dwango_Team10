@@ -44,18 +44,15 @@ public class GameLogic : MonoBehaviour {
 	/// </summary>
 	/// <returns>The start.</returns>
 	IEnumerator GameStart_CutScene(){
-
-		yield return new WaitForSeconds (countDownDuration);
-
+	
+	
 		#region スタート開始のカウントダウン処理.
-
 		for(int countDownNumber = 3; countDownNumber > 0; countDownNumber--){
 			countDownEffect.StartCountDown(countDownNumber.ToString(), countDownDuration);
 			yield return new WaitForSeconds (countDownDuration);
 		}
 
 		countDownEffect.StartCountDown("Go!", countDownDuration);
-
 		#endregion
 
 	}
