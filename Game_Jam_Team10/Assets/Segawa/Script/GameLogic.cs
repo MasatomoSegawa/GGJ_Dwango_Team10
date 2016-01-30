@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 /// <summary>
@@ -11,6 +12,9 @@ public class GameLogic : MonoBehaviour {
 
 	// クエスト予告のスクリプト.
 	private Quest quest;
+
+	[Header("ゲームがスタートされる時の演出の為のText")]
+	public Text gameStartText;
 
 	void Start(){
 
@@ -26,10 +30,22 @@ public class GameLogic : MonoBehaviour {
 		GameTimer.TimeEndEvent += E_TimeOver;
 		#endregion
 
-
 	}
 
 	#region ゲーム進行処理
+
+	/// <summary>
+	/// ゲーム開始時の処理.
+	/// </summary>
+	/// <returns>The start.</returns>
+	IEnumerator GameStart(){
+
+		gameStartText.text = "3";
+
+		return null;
+
+	}
+
 	/// <summary>
 	/// ゲームオーバーの処理.
 	/// </summary>

@@ -11,16 +11,16 @@ public class MoveRButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-	repeat = GetComponentInParent<RepeatButton>();
+		repeat = GetComponentInParent<RepeatButton>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	 if(repeat.pressing){
-	  character.Accel(1);
- }else{
+		if (repeat.pressing) {
+			character.Accel (1);
+		} else {
 
-	 }
+		}
 
 	}
 
