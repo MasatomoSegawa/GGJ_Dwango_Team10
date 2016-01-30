@@ -42,8 +42,8 @@ private Transform target;
 	}
 	loop_range = Mathf.Abs( max - min ) * 0.5f;
 
-	Vector3 center = sum / stageParts.Length;
-	target.position = new Vector3 (center.x, target.position.y);
+	//Vector3 center = sum / stageParts.Length;
+	//target.position = new Vector3 (center.x, target.position.y);
 
 	// インジケータ生成
 		indicatorL = Instantiate(indicatorPrefab);
