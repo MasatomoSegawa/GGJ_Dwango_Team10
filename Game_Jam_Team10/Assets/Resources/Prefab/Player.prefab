@@ -136,6 +136,7 @@ MonoBehaviour:
   health: 0
   isFreeze: 0
   jack: {fileID: 100940, guid: 3e5ef0fda9e7d4aec883b5b8601c5424, type: 2}
+  effect_consume: {fileID: 118454, guid: 18495d627c9364bd783449976b88101a, type: 2}
 --- !u!212 &21277790
 SpriteRenderer:
   m_ObjectHideFlags: 1

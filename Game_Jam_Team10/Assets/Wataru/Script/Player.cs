@@ -8,6 +8,9 @@ public class Player : Character {
 [SerializeField]
 private GameObject jack;
 
+	[SerializeField]
+	private GameObject effect_consume;
+
 
 public delegate void OnDelivery();
 public OnDelivery onDelivery;
@@ -33,9 +36,10 @@ public OnDelivery onDelivery;
 	private void UpdateKeeps(){
 	int num = 1;
 	float interval = 0.5f;
+	float basePos = 1f;
 
 	foreach(GameObject g in keeps){
-	 g.transform.position = this.transform.position + new Vector3(0f, interval * num, -0.25f);
+	 g.transform.position = this.transform.position + new Vector3(0f, basePos + interval * num , -0.25f);
 	 num++;
 	}
 
@@ -93,7 +97,8 @@ public override void ExecuteAttack ()
    obj.GetComponent<Collider>().enabled = false;
    keeps.Add(obj);
 
-  // SoundManager.Instance.PlaySE(4);
+   // Play se
+   SoundManager.Instance.PlaySE(4);
 
   }
 
@@ -119,8 +124,13 @@ public override void ExecuteAttack ()
 	}
 
 	private void SendToUpper(GameObject obj, float delay){
-		obj.transform.DOMoveY(5f, 1f).SetEase(Ease.InBack).SetDelay(delay).OnComplete(delegate {
+		obj.transform.DOMoveY(5f, .7f).SetEase(Ease.InBack).SetDelay(delay).OnComplete(delegate {
+
+	  GameObject e = Instantiate( effect_consume );
+	  e.transform.position = obj.transform.position;
 		Destroy ( obj );
+		Destroy(e, 2f);
+
 	  });
 	}
 
