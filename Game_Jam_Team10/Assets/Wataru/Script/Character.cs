@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Character : MonoBehaviour {
 
-	private float base_speed = 100f;
+	private float base_speed = 200f;
 	private float max_speed = 1;
 	private Rigidbody rb;
 	private bool jumping = false;
