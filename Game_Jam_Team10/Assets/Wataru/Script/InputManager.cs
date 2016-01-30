@@ -21,8 +21,12 @@ public class InputManager : MonoBehaviour {
 	  chara.Jump();
 	 }
 
-		if(Input.GetKey(KeyCode.Z)){
+	 if(Input.GetKey(KeyCode.Z)){
 	  chara.Attack();
+	 }
+
+	 if(Input.GetKey(KeyCode.P)){
+	  GetComponent<Pause>().PauseFunc();
 	 }
 	}
 
