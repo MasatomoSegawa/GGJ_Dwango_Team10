@@ -53,6 +53,9 @@ public class GameLogic : MonoBehaviour {
 
 		// プレイヤーが死んだ時のイベント登録.
 		player.die += GameOver;
+
+		// ゲームクリアー時のイベント登録.
+		quest.EndQuestEvent += GameClear;
 		#endregion
 
 		StartCoroutine (GameStart_CutScene());
@@ -119,7 +122,7 @@ public class GameLogic : MonoBehaviour {
 	/// ゲームクリアーの処理.
 	/// </summary>
 	void GameClear(){
-
+		Debug.Log ("Clear!");
 	}
 	#endregion
 
