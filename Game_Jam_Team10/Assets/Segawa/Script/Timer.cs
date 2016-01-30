@@ -29,6 +29,7 @@ public class Timer : MonoBehaviour {
 
 	void Start(){
 		this.textGUI = transform.GetComponentInChildren<Text> ();
+		isStop = true;
 	}
 
 	void Update(){
@@ -64,6 +65,13 @@ public class Timer : MonoBehaviour {
 	/// </summary>
 	public void StopTimer(){
 		isStop = true;
+	}
+
+	/// <summary>
+	/// タイマーをスタートさせる.
+	/// </summary>
+	public void StartTimer(){
+		isStop = false;
 	}
 
 	void TimeEnd(){
