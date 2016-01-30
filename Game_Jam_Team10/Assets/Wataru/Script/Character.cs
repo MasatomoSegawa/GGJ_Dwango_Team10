@@ -16,6 +16,7 @@ public class Character : MonoBehaviour {
 	protected float damage_wait = 0;
 	public bool isFreeze = false; // 操作不可
 	private float jump_force = 450f;
+	protected float fixed_rate = 1f;
 
 	// プレイヤーの死
 	public delegate void Die();
@@ -54,7 +55,7 @@ public class Character : MonoBehaviour {
 	 // play se
 	 SoundManager.Instance.PlaySE(0);
 
-	 rb.AddForce(Vector2.up * jump_force);
+	 rb.AddForce(Vector2.up * jump_force * fixed_rate);
  	 jumping = true;
  	
 	}
@@ -84,11 +85,11 @@ public class Character : MonoBehaviour {
 
 	 rb.AddForce(Vector2.right * dir * base_speed);
 	 float velocityY = rb.velocity.y;
-	 if(rb.velocity.x > max_speed){
-	  rb.velocity = new Vector2(max_speed, velocityY);
+	 if(rb.velocity.x > max_speed * fixed_rate){
+			rb.velocity = new Vector2(max_speed * fixed_rate, velocityY);
 	  flipRight = true;
-	 }else if(rb.velocity.x < -max_speed){
-	 	rb.velocity = new Vector2(-max_speed, velocityY);
+		}else if(rb.velocity.x < -max_speed * fixed_rate){
+			rb.velocity = new Vector2(-max_speed * fixed_rate, velocityY);
 	 	flipRight = false;
 	 }
 	 

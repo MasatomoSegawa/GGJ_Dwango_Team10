@@ -43,7 +43,6 @@ public OnDelivery onDelivery;
 	 num++;
 	}
 
-
 	}
 
 
@@ -79,10 +78,22 @@ public override void ExecuteAttack ()
  }
 
 	public override void ApplyDamage(int val){
-    base.ApplyDamage(val);
+     base.ApplyDamage(val);
 
-// play se
- SoundManager.Instance.PlaySE(2);
+
+	 foreach(GameObject g in keeps){
+		g.AddComponent<Rigidbody>();
+		g.GetComponent<Collider>().enabled = true;
+		g.GetComponent<Collider>().isTrigger = true;
+		Destroy(g, 1f);
+	 }
+
+	 keeps.Clear();
+
+
+
+     // play se
+     SoundManager.Instance.PlaySE(2);
 	}
 
 	protected override void OnTriggerEnter(Collider col){
@@ -93,9 +104,15 @@ public override void ExecuteAttack ()
 	}
  }
   public void AddToKeep(GameObject obj){
+
+  fixed_rate = 1f;
    Destroy( obj.GetComponent<Rigidbody>());
    obj.GetComponent<Collider>().enabled = false;
    keeps.Add(obj);
+
+   for(int i=0 ; i < keeps.Count ; i++){
+    fixed_rate *= 0.9f;
+   }
 
    // Play se
    SoundManager.Instance.PlaySE(4);
@@ -117,6 +134,8 @@ public override void ExecuteAttack ()
 	  SendToUpper(g, sum * 0.1f);
 
 	 }
+
+	 fixed_rate = 1f;
 	 keeps.Clear();
 
 	 Debug.Log("Got " + sum.ToString() + "  point!");
