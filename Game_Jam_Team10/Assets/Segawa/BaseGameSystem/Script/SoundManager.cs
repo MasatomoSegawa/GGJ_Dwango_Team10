@@ -79,8 +79,7 @@ public class SoundManager : Singleton<SoundManager>
 			this.SESources [i] = seSources;
 			SESources [i].source = gameObject.AddComponent<AudioSource> ();
 		}
-
-
+			
 	}
 
 	void Update ()
@@ -138,7 +137,7 @@ public class SoundManager : Singleton<SoundManager>
 	/// フラグがたったBGMをフェードアウトさせる.
 	/// </summary>
 	void UpdateFadeOutBGM(){
-
+	
 		foreach (SoundSource ss in BGMs) {
 			if (ss.FadeFlag == true && ss.m_FadeTime >= 0.0f) {
 				// 音量を調整する.
@@ -155,6 +154,26 @@ public class SoundManager : Singleton<SoundManager>
 					BGMSource.Stop ();
 				}
 			}
+		}
+
+	}
+
+	public void PlayBGM(int ID){
+
+		if (0 <= ID && ID < BGMs.Length && BGMs [ID].clip != null) {
+			BGMSource.clip = BGMs [ID].clip;
+			BGMSource.volume = volume.BGM;
+			BGMSource.loop = true;
+			BGMSource.Play ();
+		}
+
+
+	}
+
+	public void FadeOutBGM(int ID){
+
+		if (0 <= ID && ID < BGMs.Length && BGMs [ID].clip != null) {
+			BGMs [ID].FadeFlag = true;
 		}
 
 	}

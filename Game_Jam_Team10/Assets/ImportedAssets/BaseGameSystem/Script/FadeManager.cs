@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
-
-public enum _FadeColor{
-	Black,Red,
-}
 
 /// <summary>
 /// 簡単なシーン遷移時のフェードイン・アウトを制御するためのクラス
@@ -15,8 +12,11 @@ public class FadeManager : Singleton<FadeManager>
 
 	/// <summary>フェード中の透明度</summary>
 	private float fadeAlpha = 0;
+
 	/// <summary>フェード中かどうか</summary>
 	private bool isFading = false;
+
+	public Image BlockImage;
 
 	public void Awake ()
 	{
@@ -33,6 +33,9 @@ public class FadeManager : Singleton<FadeManager>
 		this.blackTexture.SetPixel (0, 0, Color.white);
 		this.blackTexture.Apply ();
 
+		if (BlockImage != null) {
+			BlockImage.raycastTarget = false;
+		}
 	}
 
 	public void OnGUI ()
@@ -43,7 +46,6 @@ public class FadeManager : Singleton<FadeManager>
 		GUI.color = new Color (0, 0, 0, this.fadeAlpha);
 
 		//透明度を更新して黒テクスチャを描画
-		//GUI.color = new Color (0, 0, 0, this.fadeAlpha);
 		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), this.blackTexture);
 	}
 
@@ -55,10 +57,11 @@ public class FadeManager : Singleton<FadeManager>
 	public void LoadLevel(string scene, float interval)
 	{
 
+		BlockImage.raycastTarget = true;
+
 		StartCoroutine (TransScene (scene, interval));
 	}
-
-
+		
 	/// <summary>
 	/// シーン遷移用コルーチン
 	/// </summary>
@@ -76,7 +79,9 @@ public class FadeManager : Singleton<FadeManager>
 		}
 
 		//シーン切替
-		Application.LoadLevel (scene);
+		//Application.LoadLevel (scene);
+		AsyncOperation async = Application.LoadLevelAsync(scene);
+		yield return async;
 
 		//だんだん明るく
 		time = 0;
@@ -87,6 +92,7 @@ public class FadeManager : Singleton<FadeManager>
 		}
 
 		this.isFading = false;
+		BlockImage.raycastTarget = false;
 	}
 
 }
