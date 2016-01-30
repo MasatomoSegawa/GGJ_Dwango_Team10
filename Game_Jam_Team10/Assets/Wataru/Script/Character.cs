@@ -51,8 +51,10 @@ public class Character : MonoBehaviour {
  	 if(jumping){
  	  return;
  	 }
-		Debug.Log("Jump");
-		rb.AddForce(Vector2.up * jump_force);
+	 Debug.Log("Jump");
+
+	 SoundManager.Instance.PlaySE(0);
+	 rb.AddForce(Vector2.up * jump_force);
  	 jumping = true;
  	
 	}
