@@ -7,6 +7,8 @@ public class Character : MonoBehaviour {
 	private float max_speed = 1;
 	private Rigidbody rb;
 	private bool jumping = false;
+	private bool attacking = false;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -18,17 +20,28 @@ public class Character : MonoBehaviour {
 	}
 
 	public void Jump(){
- 	Debug.Log("Jump");
- 	if(jumping){
+ 	 Debug.Log("Jump");
+ 	 if(jumping){
  	  return;
- 	}
+ 	 }
  	 rb.AddForce(Vector2.up * 300f);
  	 jumping = true;
  	
 	}
 
+	public void Attack(){
+ 	 Debug.Log("Attack");
+ 	 if(attacking){
+ 	  return;
+ 	 }
+
+ 	 //rb.AddForce(Vector2.up * 300f);
+
+ 	 attacking = true;
+ 	
+	}
+
 	public void Accel(float dir){
-	 Debug.Log(dir);
 	 rb.AddForce(Vector2.right * dir * base_speed);
 	 float velocityY = rb.velocity.y;
 	 if(rb.velocity.x > max_speed){
