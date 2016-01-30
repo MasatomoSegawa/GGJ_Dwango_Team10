@@ -6,7 +6,7 @@ public class PlayerCamera : MonoBehaviour {
 [SerializeField]
 private Character target;
 
-private Vector3 offset = new Vector3(0, 3f, -10f);
+private Vector3 offset = new Vector3(0, 5f, -10f);
 
 	private bool focusing = true;
 

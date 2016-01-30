@@ -16,6 +16,8 @@ GameObject:
   - 114: {fileID: 11413048}
   - 114: {fileID: 11486858}
   - 114: {fileID: 11422236}
+  - 114: {fileID: 11460296}
+  - 114: {fileID: 11416372}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -107,6 +109,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chara: {fileID: 0}
+--- !u!114 &11416372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e97f8bd037d24df0a082e0e1dbdfb0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!114 &11422236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,6 +152,34 @@ MonoBehaviour:
     m_VolumeAfter: 0
     m_FadeTime: 0
     m_Volume: 1
+  - clip: {fileID: 8300000, guid: 14d36f2f0ccf34cc7935a7d0d5f4ac7b, type: 3}
+    FadeFlag: 0
+    m_VolumeBefore: 0
+    m_VolumeAfter: 0
+    m_FadeTime: 0
+    m_Volume: 1
+  - clip: {fileID: 8300000, guid: 79bea655a0d514385afb2ffee7f74b74, type: 3}
+    FadeFlag: 0
+    m_VolumeBefore: 0
+    m_VolumeAfter: 0
+    m_FadeTime: 0
+    m_Volume: 1
+--- !u!114 &11460296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa389b82a3df64d84943cf825ca7dec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 131328, guid: 737f73375d1844226a78b319a39e51a2, type: 2}
+  offsetDistance: 15
+  generateDurationSeconds: 1
+  enemyList:
+  - {fileID: 131328, guid: 737f73375d1844226a78b319a39e51a2, type: 2}
 --- !u!114 &11486858
 MonoBehaviour:
   m_ObjectHideFlags: 1

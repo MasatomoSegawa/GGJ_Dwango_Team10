@@ -28,7 +28,7 @@ public class Character : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	protected virtual void  Update () {
 
 	 if(attack_wait > 0){
 	  attack_wait -= Time.deltaTime;
