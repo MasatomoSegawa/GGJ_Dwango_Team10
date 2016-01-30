@@ -14,10 +14,10 @@ private Character target;
 	void Start () {
 	
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	float percent = target.health / target.max_health;
+	float percent = (float)target.health / (float)target.max_health;
 
 	Vector3 newScl = new Vector3(percent, 1f);
 	fill.transform.localScale = newScl;

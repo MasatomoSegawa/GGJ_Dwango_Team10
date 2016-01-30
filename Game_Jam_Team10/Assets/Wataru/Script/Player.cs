@@ -22,4 +22,19 @@ public override void ExecuteAttack ()
 	Vector3 force = new Vector3(throw_force.x * (flipRight ? 1 : -1), throw_force.y);;
 		obj.GetComponent<Rigidbody>().AddForce(force);
 	}
+
+
+	protected override void OnCollisionEnter(Collision col){
+	base.OnCollisionEnter(col);
+  if(col.gameObject.tag.Equals("Enemy")){
+   if(damage_wait <= 0){
+    ApplyDamage(1);
+    }
+   }else{
+    if(jumping){
+     jumping = false;
+    }
+  }
+ }
+
 }

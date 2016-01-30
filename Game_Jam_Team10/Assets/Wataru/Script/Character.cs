@@ -3,16 +3,18 @@ using System.Collections;
 
 public class Character : MonoBehaviour {
 
-	private float base_speed = 200f;
-	private float max_speed = 1;
-	private Rigidbody rb;
-	private bool jumping = false;
+	protected float base_speed = 200f;
+	protected float max_speed = 1;
+	protected Rigidbody rb;
+	protected bool jumping = false;
 	protected float attack_interval = 1f;
-	private float attack_wait = 0;
+	protected float attack_wait = 0;
 	protected bool flipRight = true;
 	public int max_health = 3;
 	public int health;
 	protected bool isDead = false;
+	protected float damage_dur = 1f;
+	protected float damage_wait = 0;
 
 
 	// Use this for initialization
@@ -28,7 +30,11 @@ public class Character : MonoBehaviour {
 	  attack_wait -= Time.deltaTime;
 	 }
 
-	 Debug.Log(rb.velocity);
+		if(damage_wait > 0){
+			damage_wait -= Time.deltaTime;
+	 }
+
+//	 Debug.Log(rb.velocity);
 
 	 // tmp
 	 Vector3 scl = this.transform.localScale;
@@ -85,14 +91,13 @@ public class Character : MonoBehaviour {
 	  isDead = true;
 	 }
 
+	 damage_wait = damage_dur;
+
 	 // animation
 
 	}
 
- private void OnCollisionEnter(Collision col){
-  if(jumping){
-   jumping = false;
-  }
+ protected virtual void OnCollisionEnter(Collision col){
  }
 
 }
