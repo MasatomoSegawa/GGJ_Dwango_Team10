@@ -13,8 +13,11 @@ public class GameLogic : MonoBehaviour {
 	// クエスト予告のスクリプト.
 	private Quest quest;
 
-	[Header("ゲームがスタートされる時の演出の為のText")]
-	public Text gameStartText;
+	[Header("ゲームがスタートされる時の演出のスクリプト")]
+	public CountDownEffect countDownEffect;
+
+	[Header("カウントダウンの処理時間")]
+	public float countDownDuration;
 
 	void Start(){
 
@@ -30,6 +33,8 @@ public class GameLogic : MonoBehaviour {
 		GameTimer.TimeEndEvent += E_TimeOver;
 		#endregion
 
+		StartCoroutine (GameStart_CutScene());
+
 	}
 
 	#region ゲーム進行処理
@@ -38,11 +43,20 @@ public class GameLogic : MonoBehaviour {
 	/// ゲーム開始時の処理.
 	/// </summary>
 	/// <returns>The start.</returns>
-	IEnumerator GameStart(){
+	IEnumerator GameStart_CutScene(){
 
-		gameStartText.text = "3";
+		yield return new WaitForSeconds (countDownDuration);
 
-		return null;
+		#region スタート開始のカウントダウン処理.
+
+		for(int countDownNumber = 3; countDownNumber > 0; countDownNumber--){
+			countDownEffect.StartCountDown(countDownNumber.ToString(), countDownDuration);
+			yield return new WaitForSeconds (countDownDuration);
+		}
+
+		countDownEffect.StartCountDown("Go!", countDownDuration);
+
+		#endregion
 
 	}
 
@@ -76,5 +90,7 @@ public class GameLogic : MonoBehaviour {
 		Debug.Log ("Time Over!");
 	}
 	#endregion
+
+
 
 }
