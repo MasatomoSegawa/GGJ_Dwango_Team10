@@ -16,6 +16,9 @@ public class GameLogic : MonoBehaviour {
 	// Pleyrのスクリプト.
 	private Player player;
 
+	// EnemyFactoryのスクリプト.
+	private EnemyFactory enemyFactory;
+
 	[Header("ゲームがスタートされる時の演出のスクリプト")]
 	public CountDownEffect countDownEffect;
 
@@ -39,8 +42,8 @@ public class GameLogic : MonoBehaviour {
 
 		// Player取得.
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-		if(player == null)
-			print("dame");
+
+		enemyFactory = EnemyFactory.Instance;
 		#endregion
 
 		#region イベント登録.
@@ -79,6 +82,11 @@ public class GameLogic : MonoBehaviour {
 		// プレイヤーを操作可能にする.
 		player.isFreeze = false;
 
+		GameTimer.StartTimer ();
+
+		SoundManager.Instance.PlayBGM (0);
+
+		enemyFactory.StartGenerateEnemy ();
 
 	}
 
@@ -87,6 +95,8 @@ public class GameLogic : MonoBehaviour {
 	/// </summary>
 	/// <returns>The over_ cut scene.</returns>
 	IEnumerator GameOver_CutScene(){
+
+		SoundManager.Instance.FadeOutBGM (0);
 
 		// プレイヤーを操作可能にする.
 		player.isFreeze = false;

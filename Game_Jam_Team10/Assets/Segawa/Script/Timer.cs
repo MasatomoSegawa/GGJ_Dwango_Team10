@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour {
 	private float innerTime;
 
 	[Header("タイマーの処理を止める.")]
-	private bool isStop;
+	public bool isStop;
 
 	[Header("1時間経つ秒数")]
 	public float EveryHourTime;
