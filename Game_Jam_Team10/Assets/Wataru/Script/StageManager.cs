@@ -7,7 +7,6 @@ public class StageManager : MonoBehaviour {
 [SerializeField]
 private Transform target;
 
-[SerializeField]
 	private float loop_range = 100;
 
 	[SerializeField]
