@@ -151,8 +151,8 @@ GameObject:
   - 4: {fileID: 443044}
   - 212: {fileID: 21263176}
   m_Layer: 0
-  m_Name: bg (1)
-  m_TagString: Untagged
+  m_Name: bg2
+  m_TagString: Bg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,8 +185,8 @@ GameObject:
   - 4: {fileID: 407734}
   - 212: {fileID: 21296722}
   m_Layer: 0
-  m_Name: bg
-  m_TagString: Untagged
+  m_Name: bg1
+  m_TagString: Bg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,6 +268,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432264}
+  - 114: {fileID: 11403202}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -1233,6 +1234,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11403202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb5dfd58d5db4d4497c2274717ac6eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!212 &21263176
 SpriteRenderer:
   m_ObjectHideFlags: 1
