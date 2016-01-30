@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
 	 float inputX = Input.GetAxis("Horizontal");
 	 if(inputX > 0){
 			inputX = 1f;
@@ -23,6 +24,7 @@ public class InputManager : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Z)){
 	  chara.Attack();
 	 }
-
 	}
+
+
 }
