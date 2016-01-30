@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class Player : Character {
 
@@ -88,9 +89,11 @@ public override void ExecuteAttack ()
 	}
  }
   public void AddToKeep(GameObject obj){
-   obj.GetComponent<Rigidbody>().Sleep();
+   Destroy( obj.GetComponent<Rigidbody>());
    obj.GetComponent<Collider>().enabled = false;
    keeps.Add(obj);
+
+  // SoundManager.Instance.PlaySE(4);
 
   }
 
@@ -103,19 +106,22 @@ public override void ExecuteAttack ()
 
 	int sum = 0;
 	 foreach(GameObject g in keeps){
-			StartCoroutine(PlaySeWithDelay(sum * 0.35f ));
-
+	 StartCoroutine(PlaySeWithDelay(sum * 0.35f ));
 	  sum++;
-	  Destroy ( g );
+
+	  SendToUpper(g, sum * 0.1f);
+
 	 }
-
-
-
-
 	 keeps.Clear();
 
 	 Debug.Log("Got " + sum.ToString() + "  point!");
 
+	}
+
+	private void SendToUpper(GameObject obj, float delay){
+		obj.transform.DOMoveY(5f, 1f).SetEase(Ease.InBack).SetDelay(delay).OnComplete(delegate {
+		Destroy ( obj );
+	  });
 	}
 
 	private IEnumerator PlaySeWithDelay(float delay){

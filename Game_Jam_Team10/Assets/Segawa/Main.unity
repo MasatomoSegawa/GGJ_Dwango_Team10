@@ -480,7 +480,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
       propertyPath: SEs.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 460556, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
       propertyPath: m_LocalPosition.x
@@ -546,6 +546,14 @@ Prefab:
       propertyPath: SEs.Array.data[2].clip
       value: 
       objectReference: {fileID: 8300000, guid: 79bea655a0d514385afb2ffee7f74b74, type: 3}
+    - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
+      propertyPath: SEs.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f6c05993a368745a4b17d8469369978b, type: 3}
+    - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
+      propertyPath: SEs.Array.data[4].m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
   m_IsPrefabParent: 0
