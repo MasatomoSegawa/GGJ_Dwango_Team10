@@ -3,8 +3,6 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class MoveLButton : MonoBehaviour {
-	[SerializeField]
-	private IndicatorTest targetText;
 
 	[SerializeField]
 	private Character character;
@@ -20,17 +18,6 @@ public class MoveLButton : MonoBehaviour {
 	void Update () {
 	 if(repeat.pressing){
 	  character.Accel(-1f);
-			targetText.SetText("<");
-}else{
-
-	 }
-
-	}
-	/*
-	public void Press(){
-		Debug.Log("<");
-		targetText.SetText("<");
-		character.Accel(-1);
-	}
-	*/
+  }
+ }
 }

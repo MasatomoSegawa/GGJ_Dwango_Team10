@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class MoveRButton : MonoBehaviour {
+public class AttackButton : MonoBehaviour {
 
 	[SerializeField]
 	private Character character;
@@ -10,18 +10,15 @@ public class MoveRButton : MonoBehaviour {
 	private RepeatButton repeat;
 
 	// Use this for initialization
-	void Awake () {
-	repeat = GetComponentInParent<RepeatButton>();
+	void Start () {
+		repeat = GetComponentInParent<RepeatButton>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	 if(repeat.pressing){
-	  character.Accel(1);
- }else{
-
-	 }
-
+		if(repeat.pressing){
+	character.Attack();
+}
 	}
 
 }
