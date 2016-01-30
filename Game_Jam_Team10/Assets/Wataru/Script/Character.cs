@@ -10,10 +10,15 @@ public class Character : MonoBehaviour {
 	protected float attack_interval = 1f;
 	private float attack_wait = 0;
 	protected bool flipRight = true;
+	public int max_health = 3;
+	public int health;
+	protected bool isDead = false;
+
 
 	// Use this for initialization
 	protected virtual void Awake () {
 	 rb = GetComponent<Rigidbody>();
+	 health = max_health;
 	}
 	
 	// Update is called once per frame
@@ -68,6 +73,20 @@ public class Character : MonoBehaviour {
 	 	flipRight = false;
 	 }
 	 
+	}
+
+	public void ApplyDamage(int val){
+	 health -= val;
+	 if( health < 0 ){
+	 health = 0;
+	 }
+
+	 if(health == 0){
+	  isDead = true;
+	 }
+
+	 // animation
+
 	}
 
  private void OnCollisionEnter(Collision col){
