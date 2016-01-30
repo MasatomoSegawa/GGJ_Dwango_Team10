@@ -27,8 +27,8 @@ GameObject:
   - 33: {fileID: 3352200}
   - 65: {fileID: 6599630}
   - 23: {fileID: 2302854}
-  - 114: {fileID: 11435448}
-  - 54: {fileID: 5495456}
+  - 54: {fileID: 5451620}
+  - 114: {fileID: 11463370}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 114832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.83, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: -0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 464794}
   m_RootOrder: 0
@@ -94,7 +94,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133492}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5495456
+--- !u!54 &5451620
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -121,7 +121,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11435448
+--- !u!114 &11463370
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -129,9 +129,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 133492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f8264e8f65540b88094ccc73f4e20a, type: 3}
+  m_Script: {fileID: 11500000, guid: bad25a6df1d634870bcdf48c820a8477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  max_health: 3
+  health: 0
+  isFreeze: 0
+  jack: {fileID: 100940, guid: 3e5ef0fda9e7d4aec883b5b8601c5424, type: 2}
 --- !u!212 &21277790
 SpriteRenderer:
   m_ObjectHideFlags: 1
