@@ -20,6 +20,9 @@ public class InputManager : MonoBehaviour {
 	  chara.Jump();
 	 }
 
+		if(Input.GetKey(KeyCode.Z)){
+	  chara.Attack();
+	 }
 
 	}
 }
