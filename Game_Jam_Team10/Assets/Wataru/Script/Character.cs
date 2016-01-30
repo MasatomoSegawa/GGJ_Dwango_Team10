@@ -7,15 +7,18 @@ public class Character : MonoBehaviour {
 	protected float max_speed = 1;
 	protected Rigidbody rb;
 	protected bool jumping = false;
-	protected float attack_interval = 1f;
+	protected float attack_interval = 1f; // 次に攻撃できるまでの時間
 	protected float attack_wait = 0;
-	protected bool flipRight = true;
+	protected bool flipRight = true; //右を向いているか？
 	public int max_health = 3;
-	public int health;
-	protected bool isDead = false;
-	protected float damage_dur = 1f;
+	public int health = 0; 
+	protected float damage_dur = 1f; // ダメージを受けた時の無敵時間
 	protected float damage_wait = 0;
+	public bool isFreeze = false; // 操作不可
 
+	// プレイヤーの死
+	public delegate void Die();
+	public event Die die;
 
 	// Use this for initialization
 	protected virtual void Awake () {
@@ -69,6 +72,10 @@ public class Character : MonoBehaviour {
 	}
 
 	public void Accel(float dir){
+	if(isFreeze){
+	return;
+	}
+
 	 rb.AddForce(Vector2.right * dir * base_speed);
 	 float velocityY = rb.velocity.y;
 	 if(rb.velocity.x > max_speed){
@@ -88,7 +95,9 @@ public class Character : MonoBehaviour {
 	 }
 
 	 if(health == 0){
-	  isDead = true;
+	 if(die != null){
+	  die();
+	 }
 	 }
 
 	 damage_wait = damage_dur;

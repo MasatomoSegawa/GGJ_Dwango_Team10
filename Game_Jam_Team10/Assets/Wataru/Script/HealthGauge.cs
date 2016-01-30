@@ -21,6 +21,5 @@ private Character target;
 
 	Vector3 newScl = new Vector3(percent, 1f);
 	fill.transform.localScale = newScl;
-
 	}
 }
