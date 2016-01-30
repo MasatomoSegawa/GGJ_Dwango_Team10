@@ -7,6 +7,7 @@ TagManager:
   - Timer
   - Quest
   - Enemy
+  - DeadZone
   layers:
   - Default
   - TransparentFX

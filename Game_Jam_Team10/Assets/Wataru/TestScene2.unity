@@ -292,8 +292,8 @@ GameObject:
   - 65: {fileID: 205264125}
   - 23: {fileID: 205264124}
   m_Layer: 0
-  m_Name: Ground (4)
-  m_TagString: Untagged
+  m_Name: DeadZone
+  m_TagString: DeadZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,7 +308,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3b96409e54bf149a586c4844005627d9, type: 2}
+  - {fileID: 2100000, guid: 9de66147e9c5d46aca9235fd887871f9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -331,7 +331,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 205264123}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -350,8 +350,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 205264123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.9, y: -3.1, z: 0}
-  m_LocalScale: {x: 10.247404, y: 1.0644083, z: 1}
+  m_LocalPosition: {x: 23.9, y: -10, z: 0}
+  m_LocalScale: {x: 100, y: 1.0644083, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -1902,10 +1902,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 133492, guid: 0d09a08839ff64ed3ac8465448f48621, type: 2}
   m_PrefabInternal: {fileID: 1615590114}
---- !u!4 &1689386419 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 464794, guid: 0d09a08839ff64ed3ac8465448f48621, type: 2}
-  m_PrefabInternal: {fileID: 1615590114}
 --- !u!54 &1689386420
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1934,6 +1930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max_health: 3
   health: 0
+  isFreeze: 0
   jack: {fileID: 100940, guid: 3e5ef0fda9e7d4aec883b5b8601c5424, type: 2}
 --- !u!1 &1750631656
 GameObject:
@@ -2142,7 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95edcf6e32cf4072a6b7871456c220b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1689386419}
+  target: {fileID: 1689386421}
 --- !u!114 &1925567810
 MonoBehaviour:
   m_ObjectHideFlags: 0

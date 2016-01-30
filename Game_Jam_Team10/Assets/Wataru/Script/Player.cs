@@ -37,4 +37,13 @@ public override void ExecuteAttack ()
   }
  }
 
+	protected override void OnTriggerEnter(Collider col){
+
+	if(col.gameObject.tag.Equals("DeadZone")){
+
+	//即死
+	 ApplyDamage(999);
+	}
+ }
+
 }

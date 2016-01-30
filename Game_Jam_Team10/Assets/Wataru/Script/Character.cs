@@ -109,4 +109,6 @@ public class Character : MonoBehaviour {
  protected virtual void OnCollisionEnter(Collision col){
  }
 
+	protected virtual void OnTriggerEnter(Collider col){
+ }
 }
