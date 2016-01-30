@@ -22,6 +22,12 @@ public class GameLogic : MonoBehaviour {
 	[Header("カウントダウンの処理時間")]
 	public float countDownDuration;
 
+	[Header("ゲームオーバー時の演出のスクリプト")]
+	public GameOverEffect gameOverEffect;
+
+	[Header("ゲームオーバ演出の処理時間")]
+	public float gameOverDuration;
+
 	void Start(){
 
 		#region コンポーネント取得.
@@ -77,10 +83,26 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// ゲーム終了時の処理.
+	/// </summary>
+	/// <returns>The over_ cut scene.</returns>
+	IEnumerator GameOver_CutScene(){
+
+		// プレイヤーを操作可能にする.
+		player.isFreeze = false;
+
+		gameOverEffect.SetEffect (gameOverDuration);
+
+		yield return new WaitForSeconds (gameOverDuration);
+
+	}
+
+	/// <summary>
 	/// ゲームオーバーの処理.
 	/// </summary>
 	void GameOver(){
 		Debug.Log ("PlayerDie!");
+		StartCoroutine (GameOver_CutScene ());
 	}
 
 	/// <summary>
@@ -104,6 +126,20 @@ public class GameLogic : MonoBehaviour {
 	/// </summary>
 	void E_TimeOver(){
 		Debug.Log ("Time Over!");
+	}
+
+	/// <summary>
+	/// リトライボタンが押された時に呼び出される.
+	/// </summary>
+	public void OnRetryButton(){
+		FadeManager.Instance.LoadLevel ("Main", 1.0f);
+	}
+
+	/// <summary>
+	/// タイトルボタンが押された時に呼び出される.
+	/// </summary>
+	public void OnTitleButton(){
+		FadeManager.Instance.LoadLevel ("Title", 1.0f);
 	}
 	#endregion
 

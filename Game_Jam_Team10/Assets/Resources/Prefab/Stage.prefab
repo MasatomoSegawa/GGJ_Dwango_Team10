@@ -234,7 +234,6 @@ GameObject:
   - 33: {fileID: 3348900}
   - 135: {fileID: 13582716}
   - 23: {fileID: 2397116}
-  - 195: {fileID: 19569376}
   - 114: {fileID: 11427768}
   - 95: {fileID: 9542906}
   m_Layer: 0
@@ -1505,26 +1504,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &19569376
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151526}
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!212 &21263176
 SpriteRenderer:
   m_ObjectHideFlags: 1
