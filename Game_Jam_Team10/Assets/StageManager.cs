@@ -3,13 +3,25 @@ using System.Collections;
 
 public class StageManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+[SerializeField]
+private Transform target;
+
+
+	private float loop_range = 500;
+
+	GameObject[] stageParts;
+
+	private void Start(){
+	 stageParts = GameObject.FindGameObjectsWithTag ("Structure");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	private void Update(){
+	foreach(GameObject g in stageParts){
+	//if(g.transform.
 	}
+
+
+	}
+
+
 }
