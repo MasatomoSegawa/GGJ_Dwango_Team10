@@ -15,6 +15,7 @@ public class Character : MonoBehaviour {
 	protected float damage_dur = 1f; // ダメージを受けた時の無敵時間
 	protected float damage_wait = 0;
 	public bool isFreeze = false; // 操作不可
+	private float jump_force = 450f;
 
 	// プレイヤーの死
 	public delegate void Die();
@@ -50,8 +51,10 @@ public class Character : MonoBehaviour {
  	 if(jumping){
  	  return;
  	 }
-		Debug.Log("Jump");
- rb.AddForce(Vector2.up * 300f);
+	 Debug.Log("Jump");
+
+	 SoundManager.Instance.PlaySE(0);
+	 rb.AddForce(Vector2.up * jump_force);
  	 jumping = true;
  	
 	}

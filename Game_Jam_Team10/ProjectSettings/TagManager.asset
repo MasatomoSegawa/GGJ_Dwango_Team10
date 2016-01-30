@@ -8,6 +8,8 @@ TagManager:
   - Quest
   - Enemy
   - DeadZone
+  - Structure
+  - Bg
   layers:
   - Default
   - TransparentFX
