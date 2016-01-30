@@ -194,7 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9789f8fee75d4926b925886a410abf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetText: {fileID: 901773332}
   character: {fileID: 889512509}
 --- !u!114 &182241101
 MonoBehaviour:
@@ -551,7 +550,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7648836f646e446e7ad29860d9404edf, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -906,7 +905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ac6502d77664a47bd83fa80181a05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetText: {fileID: 901773332}
   character: {fileID: 889512509}
 --- !u!114 &1575995229
 MonoBehaviour:
@@ -1386,7 +1384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9862069, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1394,7 +1392,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7648836f646e446e7ad29860d9404edf, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1522,7 +1520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bff20024cd7437f8ce2dc45d5f7bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetText: {fileID: 901773332}
   character: {fileID: 889512509}
 --- !u!114 &2077271146
 MonoBehaviour:

@@ -14,26 +14,43 @@ public class GameLogic : MonoBehaviour {
 
 	void Start(){
 
+		#region コンポーネント取得.
 		// Timer取得.
 		GameTimer = GameObject.FindGameObjectWithTag ("Timer").GetComponent<Timer>();
 
 		// Quest取得.
 		quest = GameObject.FindGameObjectWithTag ("Quest").GetComponent<Quest> ();
+		#endregion
 
 		#region イベント登録.
-
 		GameTimer.TimeEndEvent += E_TimeOver;
-
 		#endregion
+
+
 	}
 
+	#region ゲーム進行処理
+	/// <summary>
+	/// ゲームオーバーの処理.
+	/// </summary>
+	void GameOver(){
+
+	}
+
+	/// <summary>
+	/// ゲームクリアーの処理.
+	/// </summary>
+	void GameClear(){
+
+	}
+	#endregion
 
 	#region イベント
 	/// <summary>
 	/// プレイヤーが死んだ時に呼び出される.
 	/// </summary>
 	void E_PlayerDeath(){
-
+		Debug.Log ("Death!");
 	}
 
 	/// <summary>
