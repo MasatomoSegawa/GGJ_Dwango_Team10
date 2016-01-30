@@ -11,6 +11,9 @@ private GameObject jack;
 	[SerializeField]
 	private GameObject effect_consume;
 
+	[SerializeField]
+	private Quest quest;
+
 
 public delegate void OnDelivery();
 public OnDelivery onDelivery;
@@ -89,8 +92,7 @@ public override void ExecuteAttack ()
 	 }
 
 	 keeps.Clear();
-
-
+	 fixed_rate = 1f;
 
      // play se
      SoundManager.Instance.PlaySE(2);
@@ -128,12 +130,13 @@ public override void ExecuteAttack ()
 
 	int sum = 0;
 	 foreach(GameObject g in keeps){
-	 StartCoroutine(PlaySeWithDelay(sum * 0.35f ));
+	  StartCoroutine(PlaySeWithDelay(sum * 0.35f ));
 	  sum++;
 
 	  SendToUpper(g, sum * 0.1f);
-
 	 }
+
+	 quest.ReduceRitualOfNumber(sum);
 
 	 fixed_rate = 1f;
 	 keeps.Clear();

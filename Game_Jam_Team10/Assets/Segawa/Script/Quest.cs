@@ -20,6 +20,7 @@ public class Quest : MonoBehaviour {
 		textGUI = transform.GetComponentInChildren<Text> ();
 
 		UpdateUI ();
+
 	}
 
 	void Update(){
