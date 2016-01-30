@@ -17,7 +17,7 @@ public class Pause : MonoBehaviour {
 
 	public void PauseFunc(){
 
-	pausing = !pausing;
+	 pausing = !pausing;
 
 	 Debug.Log( " Pause(" + pausing.ToString() + ") " );
 
