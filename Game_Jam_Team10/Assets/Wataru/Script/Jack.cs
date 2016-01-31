@@ -36,7 +36,7 @@ public class Jack : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision col){
 	 if(col.gameObject.tag.Equals("Enemy")){
-	 col.gameObject.GetComponent<EnemyController>().Die();
+	    col.gameObject.GetComponent<EnemyController>().Die();
 		Collapse();
      }
 	}
