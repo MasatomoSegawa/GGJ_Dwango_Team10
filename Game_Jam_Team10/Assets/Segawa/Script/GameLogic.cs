@@ -34,6 +34,14 @@ public class GameLogic : MonoBehaviour {
 	[Header("PlayerのコントロールボタンのCanvasGroup.")]
 	public CanvasGroup plyaerControllButtons;
 
+	void Update(){
+
+		if (Input.anyKey == true) {
+			GameClear ();
+		}
+
+	}
+
 	void Start(){
 
 		#region コンポーネント取得.
@@ -139,6 +147,16 @@ public class GameLogic : MonoBehaviour {
 	/// </summary>
 	void GameClear(){
 		Debug.Log ("Clear!");
+		SoundManager.Instance.FadeOutBGM (0);
+
+		// プレイヤーを操作不可能にする.
+		player.isFreeze = false;
+
+		// PlayerControllButtonを使用不可にする.
+		plyaerControllButtons.interactable = false;
+		plyaerControllButtons.blocksRaycasts = false;
+
+		FadeManager.Instance.LoadLevel ("Ending", 1.0f);
 	}
 	#endregion
 
