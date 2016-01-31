@@ -31,7 +31,7 @@ private Transform target;
 	void Start () {
 		for (int i = 0; i < transform.childCount; i++) {
 			bgImage.Add (transform.GetChild (i).gameObject);
-			tmptimer_max = time_info.currentTime;
+			//tmptimer_max = time_info.currentTime;
 			bg_change_interval = tmptimer_max / images.Length;
 		}
 

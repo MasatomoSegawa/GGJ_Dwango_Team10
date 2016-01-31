@@ -10003,8 +10003,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11403186, guid: 7fcad548babc04ef89605ee0e44da376, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11422328, guid: 7fcad548babc04ef89605ee0e44da376, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485938, guid: 7fcad548babc04ef89605ee0e44da376, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403186, guid: 7fcad548babc04ef89605ee0e44da376, type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1998749452}
+    - target: {fileID: 11403186, guid: 7fcad548babc04ef89605ee0e44da376, type: 2}
+      propertyPath: time_info
+      value: 
+      objectReference: {fileID: 749033889}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fcad548babc04ef89605ee0e44da376, type: 2}
   m_IsPrefabParent: 0
