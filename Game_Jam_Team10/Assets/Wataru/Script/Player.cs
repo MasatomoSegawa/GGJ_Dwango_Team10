@@ -185,7 +185,7 @@ public override void ExecuteAttack ()
 
 	 yield return new WaitForSeconds( wait );
 
-	 Destroy(obj);
+	 Destroy(obj, 5f);
 	 if(die != null){
 	  die();
 	 }
