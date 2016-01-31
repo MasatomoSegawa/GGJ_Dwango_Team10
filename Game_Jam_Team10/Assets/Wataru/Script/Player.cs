@@ -125,7 +125,6 @@ public override void ExecuteAttack ()
 
   }
 
-
 	public void Delivery(){
 
 	if( onDelivery != null){
@@ -171,8 +170,12 @@ public override void ExecuteAttack ()
 
 	private IEnumerator ShowExpressionOfDie(float wait){
 
+	// se 
+	SoundManager.Instance.PlaySE(4);
 
+	   // BGMをフェードアウト
 		SoundManager.Instance.FadeOutBGM(0);
+
 
 	 Destroy( GetComponent<Rigidbody>() );
 	 this.GetComponent<BoxCollider>().enabled = false;
@@ -191,7 +194,7 @@ public override void ExecuteAttack ()
 	 }
 
 	 // play gameover bgm
-	 SoundManager.Instance.PlayBGM(1);
+	 //SoundManager.Instance.PlayBGM(1);
 	}
 
 	private IEnumerator PlaySeWithDelay(float delay){

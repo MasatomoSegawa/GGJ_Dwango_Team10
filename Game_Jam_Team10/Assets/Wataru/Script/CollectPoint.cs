@@ -1,15 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class CollectPoint : MonoBehaviour {
 
 [SerializeField]
 private GameObject circle;
-
+	[SerializeField]
+private GameObject circle2;
     private float timer = 0;
 	private float appear_dur = 10; // 魔法陣移動までの時間
 
-private float rotSpeed = 1f;
+	private float rotSpeed = 1f;
+	private float rotSpeed2 = 0.5f;
+
+
+	private bool expressing = false;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +25,12 @@ private float rotSpeed = 1f;
 	// Update is called once per frame
 	void Update () {
 	// 魔法陣回転
-	 circle.transform.Rotate(Vector3.up * rotSpeed);
+		circle.transform.Rotate(Vector3.up * rotSpeed);
+		circle2.transform.Rotate(Vector3.down * rotSpeed2);
+
+	if(	expressing ){
+	 return;
+	}
 
 	 //一定時間で移動
 	 timer += Time.deltaTime;
@@ -33,13 +44,30 @@ private float rotSpeed = 1f;
 	private void OnTriggerEnter(Collider col){
 	if(col.tag.Equals( "Player" )){
 	 col.GetComponent<Player>().Delivery();
-	 ChangePosition();
+	 Exetuce();
 	}
 
+	}
+
+	private void Exetuce(){
+	Debug.Log("Execute");
+	expressing = true;
+
+
+
+	 circle.transform.GetChild(0).GetComponent<SpriteRenderer>().DOFade(0f, 1.5f);
+	 circle.transform.DOScale(3f, 1.5f).OnComplete(delegate {
+	 circle.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+	 circle.transform.localScale = Vector3.one;
+	 	ChangePosition();
+	 });
 	}
 
 
 	private void ChangePosition(){
+
+	expressing = false;
+
 	 GameObject[] stages = GameObject.FindGameObjectsWithTag("Structure");
 	 int key = 0;
 		bool haveCollectPoint;
