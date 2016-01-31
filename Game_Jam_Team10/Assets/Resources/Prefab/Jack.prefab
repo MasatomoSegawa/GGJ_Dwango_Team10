@@ -15,7 +15,7 @@ GameObject:
   - 54: {fileID: 5419126}
   m_Layer: 8
   m_Name: Jack
-  m_TagString: Untagged
+  m_TagString: ThrowObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,6 +281,10 @@ Prefab:
       propertyPath: effectPrefab
       value: 
       objectReference: {fileID: 140952, guid: d22f6ea60cbce4dc0833b09ff676a010, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: ThrowObject
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100940}

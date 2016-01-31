@@ -26,11 +26,15 @@ private GameObject jack;
 
 	public override event Die die;
 
+	[SerializeField]
+	private Timer timer;
+
 
 	protected override void Awake ()
 	{
 		base.Awake ();
 		attack_interval = 0.5f;
+		timer.TimeEndEvent += () =>  ChangeStateToDie();
 	}
 
 	protected override void Update ()
@@ -65,21 +69,15 @@ public override void ExecuteAttack ()
 
 	protected override void OnCollisionEnter(Collision col){
 	base.OnCollisionEnter(col);
-		if(col.gameObject.tag.Equals("Enemy")){
-  // 敵
-   if( col.gameObject.GetComponent<EnemyController>().dead ){
+    if(col.gameObject.tag.Equals("Enemy")){
+			// エクソシスト
+   if( col.gameObject.GetComponent<Exorcist>().dead ){
     AddToKeep(col.gameObject);
    }else{
 	if(damage_wait <= 0){
      ApplyDamage(1);
     }
    }
-
-
-	}else if(col.gameObject.tag.Equals("EnemyObject")){
-	if(damage_wait <= 0){
-     ApplyDamage(1);
-    }
    }else{
    // 地面
     if(jumping){
@@ -170,6 +168,7 @@ public override void ExecuteAttack ()
 	}
 
 	protected override void ChangeStateToDie(){
+	health = 0;
 		StartCoroutine( ShowExpressionOfDie(2f) );
 	}
 
@@ -205,7 +204,7 @@ public override void ExecuteAttack ()
 	private IEnumerator PlaySeWithDelay(float delay){
 		yield return new WaitForSeconds (delay);
 		// play se
-		SoundManager.Instance.PlaySE (4);
+		SoundManager.Instance.PlaySE (3);
 	}
 
 }

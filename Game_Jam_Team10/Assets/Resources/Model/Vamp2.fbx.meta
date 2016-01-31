@@ -290,7 +290,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: Right_Leg_J
-      position: {x: -0.038984, y: 0.0439759, z: 2.4424906e-17}
+      position: {x: -0.038984, y: 0.0439759, z: 2.4424908e-17}
       rotation: {x: -0.020971997, y: 0.6015672, z: 0.798062, w: 0.02782225}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
@@ -305,7 +305,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: Left_Leg_J
-      position: {x: -0.038984, y: -0.0439759, z: 3.6082247e-17}
+      position: {x: -0.038984, y: -0.0439759, z: 3.608225e-17}
       rotation: {x: -0.798062, y: -0.02782225, z: -0.020971997, w: 0.6015672}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
@@ -350,7 +350,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: Right_Elbow_J
-      position: {x: 0.109502524, y: -0.00000022749042, z: 0.000000069746875}
+      position: {x: 0.10950253, y: -0.00000022749042, z: 0.000000069746875}
       rotation: {x: 0.0006248494, y: 0.07145143, z: -0.020740421, w: 0.99722826}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
