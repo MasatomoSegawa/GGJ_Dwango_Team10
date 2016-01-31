@@ -139,6 +139,7 @@ public class GameLogic : MonoBehaviour {
 	/// </summary>
 	void E_TimeOver(){
 		Debug.Log ("Time Over!");
+		GameOver ();
 	}
 
 	/// <summary>

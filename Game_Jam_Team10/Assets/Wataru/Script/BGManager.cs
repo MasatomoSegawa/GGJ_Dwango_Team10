@@ -49,10 +49,10 @@ private Transform target;
 
 	//Debug.Log( time_info.EveryHourTime );
 
-	FadePrevImage();
+	//FadePrevImage();
 
 
-
+		/*
 	if(image_idx >= images.Length){
 	return;
 	}
@@ -61,7 +61,8 @@ private Transform target;
 
 	 if(tmptimer > bg_change_interval * (image_idx+1) && image_idx != tmptimer / bg_change_interval){
 	  ChangeBgImage();
-	 }
+	 }*/
+
 	}
 
 	private void JudgeAndReplaceBgImage(){
