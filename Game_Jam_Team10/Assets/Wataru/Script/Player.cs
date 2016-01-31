@@ -65,7 +65,7 @@ public override void ExecuteAttack ()
 
 	protected override void OnCollisionEnter(Collision col){
 	base.OnCollisionEnter(col);
-  if(col.gameObject.tag.Equals("Enemy")){
+		if(col.gameObject.tag.Equals("Enemy")){
   // 敵
    if( col.gameObject.GetComponent<EnemyController>().dead ){
     AddToKeep(col.gameObject);
@@ -76,6 +76,10 @@ public override void ExecuteAttack ()
    }
 
 
+	}else if(col.gameObject.tag.Equals("EnemyObject")){
+	if(damage_wait <= 0){
+     ApplyDamage(1);
+    }
    }else{
    // 地面
     if(jumping){
