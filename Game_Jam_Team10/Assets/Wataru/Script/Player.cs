@@ -171,6 +171,9 @@ public override void ExecuteAttack ()
 
 	private IEnumerator ShowExpressionOfDie(float wait){
 
+
+		SoundManager.Instance.FadeOutBGM(0);
+
 	 Destroy( GetComponent<Rigidbody>() );
 	 this.GetComponent<BoxCollider>().enabled = false;
 
@@ -186,12 +189,15 @@ public override void ExecuteAttack ()
 	 if(die != null){
 	  die();
 	 }
+
+	 // play gameover bgm
+	 SoundManager.Instance.PlayBGM(1);
 	}
 
 	private IEnumerator PlaySeWithDelay(float delay){
 		yield return new WaitForSeconds (delay);
 		// play se
-		SoundManager.Instance.PlaySE (3);
+		SoundManager.Instance.PlaySE (4);
 	}
 
 }
