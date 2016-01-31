@@ -11,6 +11,7 @@ TagManager:
   - Structure
   - Bg
   - EnemyObject
+  - ThrowObject
   layers:
   - Default
   - TransparentFX
