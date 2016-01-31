@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Segawa/Title.unity
   - enabled: 1
     path: Assets/Segawa/Main.unity
+  - enabled: 1
+    path: Assets/Segawa/Ending.unity
