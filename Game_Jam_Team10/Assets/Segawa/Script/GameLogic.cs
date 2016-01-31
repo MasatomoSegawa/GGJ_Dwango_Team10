@@ -34,13 +34,6 @@ public class GameLogic : MonoBehaviour {
 	[Header("PlayerのコントロールボタンのCanvasGroup.")]
 	public CanvasGroup plyaerControllButtons;
 
-	void Update(){
-
-		if (Input.anyKey == true) {
-			GameClear ();
-		}
-
-	}
 
 	void Start(){
 
