@@ -8,7 +8,7 @@ public class BGManager : MonoBehaviour {
 [SerializeField]
 private Transform target;
 
-	private List<GameObject> bgImage = new List<GameObject>();
+	private List<SpriteRenderer> bgImage = new List<SpriteRenderer>();
 	private float distance = 0;
 
 	private float switch_interval = 5f;
@@ -30,7 +30,7 @@ private Transform target;
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < transform.childCount; i++) {
-			bgImage.Add (transform.GetChild (i).gameObject);
+			bgImage.Add (transform.GetChild (i).GetComponent<SpriteRenderer>());
 			//tmptimer_max = time_info.currentTime;
 			bg_change_interval = tmptimer_max / images.Length;
 		}
@@ -49,10 +49,9 @@ private Transform target;
 
 	//Debug.Log( time_info.EveryHourTime );
 
-	//FadePrevImage();
+	FadePrevImage();
 
-
-		/*
+		
 	if(image_idx >= images.Length){
 	return;
 	}
@@ -61,7 +60,7 @@ private Transform target;
 
 	 if(tmptimer > bg_change_interval * (image_idx+1) && image_idx != tmptimer / bg_change_interval){
 	  ChangeBgImage();
-	 }*/
+	 }
 
 	}
 
@@ -70,7 +69,7 @@ private Transform target;
 	// プレイヤー位置を背景画像の距離単位で取得
 		int numOfTargetPosUnit = (int)Mathf.Floor( target.transform.position.x / distance);
 
-		foreach(GameObject g in bgImage){
+		foreach(SpriteRenderer g in bgImage){
 			Vector3 pos = g.transform.position;
 			float modfiedPos =  distance * ( bgImage.IndexOf( g ) == 0 ? numOfTargetPosUnit : numOfTargetPosUnit+1 );
 			Vector3 newPos = new Vector3(modfiedPos, pos.y, pos.z);
@@ -78,7 +77,7 @@ private Transform target;
 		}
 	}
 
-	/*
+
 	private void ChangeBgImage(){
 		image_idx = (int)(tmptimer / bg_change_interval);
 		if(image_idx >= images.Length){
@@ -94,25 +93,25 @@ private Transform target;
 		 sr.sprite = s.sprite;
 		 s.sprite = images[image_idx];
 		}
-	}*/
+	}
 
-	/*
+
 	private void FadePrevImage(){
 
 	foreach(SpriteRenderer s in bgImage){
 	 if(s.transform.childCount >= 1){
-	  Color col = s.transform.GetChild(0).GetComponent<SpriteRenderer>().material.color;
+	  Color col = s.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
 	  float alpha = col.a -= Time.deltaTime;
 	  if(alpha <= 0){
 	   Destroy(s.transform.GetChild(0).gameObject);
 	  }else{
 	   Color newCol = new Color(1f,1f,1f,alpha);
-	   s.transform.GetChild(0).GetComponent<SpriteRenderer>().material.color = newCol;
+	   s.transform.GetChild(0).GetComponent<SpriteRenderer>().color = newCol;
 	  }
 	 }
 	}
 
 	}
-	*/
+
 
 }
