@@ -35,7 +35,7 @@ public class Quest : MonoBehaviour {
 	public void ReduceRitualOfNumber(int number){
 
 		ritualOfNumber = Mathf.Clamp (ritualOfNumber - number, 0, 100);
-		if (ritualOfNumber == 0) {
+		if (ritualOfNumber <= 0) {
 			if (EndQuestEvent != null) {
 				EndQuestEvent ();
 			}

@@ -31,6 +31,9 @@ public class GameLogic : MonoBehaviour {
 	[Header("ゲームオーバ演出の処理時間")]
 	public float gameOverDuration;
 
+	[Header("PlayerのコントロールボタンのCanvasGroup.")]
+	public CanvasGroup plyaerControllButtons;
+
 	void Start(){
 
 		#region コンポーネント取得.
@@ -47,7 +50,6 @@ public class GameLogic : MonoBehaviour {
 		#endregion
 
 		#region イベント登録.
-
 		// Timerのイベント登録.
 		GameTimer.TimeEndEvent += E_TimeOver;
 
@@ -58,6 +60,7 @@ public class GameLogic : MonoBehaviour {
 		quest.EndQuestEvent += GameClear;
 		#endregion
 
+		// ゲームスタート時のカットシーンスタート.
 		StartCoroutine (GameStart_CutScene());
 
 	}
@@ -73,6 +76,10 @@ public class GameLogic : MonoBehaviour {
 		// プレイヤーを操作不可能にする.
 		player.isFreeze = true;
 
+		// PlayerControllButtonを使用不可にする.
+		plyaerControllButtons.interactable = false;
+		plyaerControllButtons.blocksRaycasts = false;
+
 		#region スタート開始のカウントダウン処理.
 		for(int countDownNumber = 3; countDownNumber > 0; countDownNumber--){
 			countDownEffect.StartCountDown(countDownNumber.ToString(), countDownDuration);
@@ -85,6 +92,11 @@ public class GameLogic : MonoBehaviour {
 		// プレイヤーを操作可能にする.
 		player.isFreeze = false;
 
+		// PlayerControllButtonを使用可にする.
+		plyaerControllButtons.interactable = true;
+		plyaerControllButtons.blocksRaycasts = true;
+
+		// Timerをスタート.
 		GameTimer.StartTimer ();
 
 		SoundManager.Instance.PlayBGM (0);
@@ -101,8 +113,12 @@ public class GameLogic : MonoBehaviour {
 
 		SoundManager.Instance.FadeOutBGM (0);
 
-		// プレイヤーを操作可能にする.
+		// プレイヤーを操作不可能にする.
 		player.isFreeze = false;
+
+		// PlayerControllButtonを使用不可にする.
+		plyaerControllButtons.interactable = false;
+		plyaerControllButtons.blocksRaycasts = false;
 
 		gameOverEffect.SetEffect (gameOverDuration);
 
@@ -132,6 +148,7 @@ public class GameLogic : MonoBehaviour {
 	/// </summary>
 	void E_PlayerDeath(){
 		Debug.Log ("Death!");
+		GameOver ();
 	}
 
 	/// <summary>

@@ -157,9 +157,9 @@ public override void ExecuteAttack ()
 	}
 
 	private IEnumerator PlaySeWithDelay(float delay){
-	 yield return new WaitForSeconds(delay);
+		yield return new WaitForSeconds (delay);
 		// play se
-	 SoundManager.Instance.PlaySE(3);
+		SoundManager.Instance.PlaySE (3);
 	}
 
 }
