@@ -50,6 +50,12 @@ private GameObject jack;
 	 num++;
 	}
 
+		if (keeps.Count == 0) {
+			animator.SetBool ("isCarry", false);
+		} else {
+			animator.SetBool ("isCarry", true);
+		}
+
 	}
 
 
