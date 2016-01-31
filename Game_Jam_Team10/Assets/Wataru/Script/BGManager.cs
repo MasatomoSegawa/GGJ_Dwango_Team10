@@ -8,7 +8,7 @@ public class BGManager : MonoBehaviour {
 [SerializeField]
 private Transform target;
 
-	private List<SpriteRenderer> bgImage = new List<SpriteRenderer>();
+	private List<GameObject> bgImage = new List<GameObject>();
 	private float distance = 0;
 
 	private float switch_interval = 5f;
@@ -29,14 +29,14 @@ private Transform target;
 
 	// Use this for initialization
 	void Start () {
-	 for(int i = 0 ; i <  transform.childCount ; i++){
-	  bgImage.Add(transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>());
-	  tmptimer_max = time_info.currentTime;
-	  bg_change_interval = tmptimer_max / images.Length;
-	 } 
+		for (int i = 0; i < transform.childCount; i++) {
+			bgImage.Add (transform.GetChild (i).gameObject);
+			tmptimer_max = time_info.currentTime;
+			bg_change_interval = tmptimer_max / images.Length;
+		}
 
-	 // 背景２枚の時限定
-	 distance = bgImage[0].transform.localPosition.x - bgImage[1].transform.localPosition.x;
+		// 背景２枚の時限定
+		distance = bgImage [0].transform.localPosition.x - bgImage [1].transform.localPosition.x;
 	}
 	
 	// Update is called once per frame
@@ -70,7 +70,7 @@ private Transform target;
 	// プレイヤー位置を背景画像の距離単位で取得
 		int numOfTargetPosUnit = (int)Mathf.Floor( target.transform.position.x / distance);
 
-		foreach(SpriteRenderer g in bgImage){
+		foreach(GameObject g in bgImage){
 			Vector3 pos = g.transform.position;
 			float modfiedPos =  distance * ( bgImage.IndexOf( g ) == 0 ? numOfTargetPosUnit : numOfTargetPosUnit+1 );
 			Vector3 newPos = new Vector3(modfiedPos, pos.y, pos.z);
@@ -78,6 +78,7 @@ private Transform target;
 		}
 	}
 
+	/*
 	private void ChangeBgImage(){
 		image_idx = (int)(tmptimer / bg_change_interval);
 		if(image_idx >= images.Length){
@@ -93,8 +94,9 @@ private Transform target;
 		 sr.sprite = s.sprite;
 		 s.sprite = images[image_idx];
 		}
-	}
+	}*/
 
+	/*
 	private void FadePrevImage(){
 
 	foreach(SpriteRenderer s in bgImage){
@@ -111,4 +113,6 @@ private Transform target;
 	}
 
 	}
+	*/
+
 }

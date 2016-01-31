@@ -52,11 +52,12 @@ public class BackgroundUI : MonoBehaviour {
 
 			yield return new WaitForSeconds (backgroundChangeDuration);
 
-			if (index >= spriteList.Count) {
-				StopCoroutine (ChangeBackgroundLoop ());
-			}
 			index += 1;
-			currentTarget = spriteList [index];
+			if (index >= spriteList.Count - 1) {
+				StopCoroutine (ChangeBackgroundLoop ());
+			} else {
+				currentTarget = spriteList [index];
+			}
 		}
 
 	}
