@@ -26,7 +26,7 @@ private GameObject circle2;
 	void Update () {
 	// 魔法陣回転
 		circle.transform.Rotate(Vector3.up * rotSpeed);
-		circle2.transform.Rotate(Vector3.down * rotSpeed2);
+		circle2.transform.Rotate(Vector3.down * rotSpeed2  * (expressing ? 3f : 1f ));
 
 	if(	expressing ){
 	 return;
@@ -53,12 +53,16 @@ private GameObject circle2;
 	Debug.Log("Execute");
 	expressing = true;
 
-
+		circle2.transform.GetChild(0).GetComponent<SpriteRenderer>().DOFade(0f, 1.5f);
+		circle2.transform.localPosition = Vector3.up * 1f;
 
 	 circle.transform.GetChild(0).GetComponent<SpriteRenderer>().DOFade(0f, 1.5f);
 	 circle.transform.DOScale(3f, 1.5f).OnComplete(delegate {
 	 circle.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
 	 circle.transform.localScale = Vector3.one;
+	circle2.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+			circle2.transform.localPosition = Vector3.zero;
+
 	 	ChangePosition();
 	 });
 	}

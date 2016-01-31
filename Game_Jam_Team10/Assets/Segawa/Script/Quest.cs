@@ -10,7 +10,8 @@ public class Quest : MonoBehaviour {
 	public string baseString = "エクソシストを";
 	public string baseEndString = "匹生け贄に捧げよ!";
 
-	private int ritualOfNumber = 10;
+	[SerializeField]
+	private int ritualOfNumber = 5;
 
 	public delegate void EndQuest ();
 	public EndQuest EndQuestEvent;

@@ -32,6 +32,8 @@ private GameObject jack;
 
 	protected override void Awake ()
 	{
+
+
 		base.Awake ();
 		attack_interval = 0.5f;
 		timer.TimeEndEvent += () =>  ChangeStateToDie();
@@ -84,6 +86,12 @@ public override void ExecuteAttack ()
      ApplyDamage(1);
     }
    }
+		}else if(col.gameObject.tag.Equals("EnemyObject")){
+
+	if(damage_wait <= 0){
+     ApplyDamage(1);
+    }
+   
    }else{
    // 地面
     if(jumping){
