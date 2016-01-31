@@ -22,17 +22,12 @@ private Transform target;
 
 	private int image_idx = 0;
 
-	// tmp
-	private float tmptimer  = 0f; 
-	private float tmptimer_max = 15f; 
-	private float bg_change_interval = 0;
 
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < transform.childCount; i++) {
 			bgImage.Add (transform.GetChild (i).GetComponent<SpriteRenderer>());
-			//tmptimer_max = time_info.currentTime;
-			bg_change_interval = tmptimer_max / images.Length;
+
 		}
 
 		// 背景２枚の時限定
@@ -47,7 +42,14 @@ private Transform target;
 	  JudgeAndReplaceBgImage();
 	 }
 
-	//Debug.Log( time_info.EveryHourTime );
+
+
+		Debug.Log(  time_info.currentTime.ToString() + " / " + time_info.EveryHourTime.ToString() );
+
+		if(time_info.currentTime > time_info.EveryHourTime){
+		 return;
+		}
+
 
 	FadePrevImage();
 
@@ -56,12 +58,9 @@ private Transform target;
 	return;
 	}
 
-	 tmptimer += Time.deltaTime;
-
-	 if(tmptimer > bg_change_interval * (image_idx+1) && image_idx != tmptimer / bg_change_interval){
-	  ChangeBgImage();
+	 if(image_idx != time_info.currentTime){
+	 ChangeBgImage();
 	 }
-
 	}
 
 	private void JudgeAndReplaceBgImage(){
@@ -79,7 +78,7 @@ private Transform target;
 
 
 	private void ChangeBgImage(){
-		image_idx = (int)(tmptimer / bg_change_interval);
+		image_idx = time_info.currentTime; 
 		if(image_idx >= images.Length){
 	     return;
 	    }
