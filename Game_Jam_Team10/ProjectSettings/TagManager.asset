@@ -10,6 +10,7 @@ TagManager:
   - DeadZone
   - Structure
   - Bg
+  - EnemyObject
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - 
   - ThrowObject
   - Player
-  - 
-  - 
+  - EnemyThrowObject
+  - Enemy
   - 
   - 
   - 
