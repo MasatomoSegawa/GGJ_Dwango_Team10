@@ -42,11 +42,18 @@ private float rotSpeed = 1f;
 	private void ChangePosition(){
 	 GameObject[] stages = GameObject.FindGameObjectsWithTag("Structure");
 	 int key = 0;
-
+		bool haveCollectPoint;
 	 // 魔法陣が出現していないステージパーツを移動先に設定
 	 do{
-	  key = Random.Range(0, stages.Length);
-	 }while(stages[key].transform.childCount >= 1);
+		key = Random.Range(0, stages.Length);
+        haveCollectPoint = false;
+		for( int i = 0 ; i < stages[key].transform.childCount ; i++){
+				if(stages[key].transform.GetChild(i).name.Contains("CollectPoint")){
+				  haveCollectPoint = true;
+				  break;
+				}
+		}
+		}while(haveCollectPoint);
 
 	 // ステージパーツの子要素にする
 	 this.transform.SetParent( stages[key].transform );
