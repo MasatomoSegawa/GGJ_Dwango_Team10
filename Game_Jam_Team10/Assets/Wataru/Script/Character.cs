@@ -10,7 +10,7 @@ public class Character : MonoBehaviour {
 	protected float attack_interval = 1f; // 次に攻撃できるまでの時間
 	protected float attack_wait = 0;
 	protected bool flipRight = true; //右を向いているか？
-	public int max_health = 3;
+	public int max_health = 1;
 	public int health = 0; 
 	protected float damage_dur = 1f; // ダメージを受けた時の無敵時間
 	protected float damage_wait = 0;
@@ -20,7 +20,7 @@ public class Character : MonoBehaviour {
 
 	// プレイヤーの死
 	public delegate void Die();
-	public event Die die;
+	public virtual event Die die;
 
 	// Use this for initialization
 	protected virtual void Awake () {
@@ -102,15 +102,20 @@ public class Character : MonoBehaviour {
 	 }
 
 	 if(health == 0){
-	 if(die != null){
-	  die();
-	 }
+	  ChangeStateToDie();
+
 	 }
 
 	 damage_wait = damage_dur;
 
 	 // animation
 
+	}
+
+	protected virtual void ChangeStateToDie(){
+	 if(die != null){
+		die();
+	 }
 	}
 
  protected virtual void OnCollisionEnter(Collision col){
