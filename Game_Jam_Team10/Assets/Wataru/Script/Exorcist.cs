@@ -10,7 +10,7 @@ private Transform target;
 
 	private float throwInterval = 1f;
 	private float timer = 0f;
-
+	public bool dead = false;
 
 [SerializeField]
 private float findRange = 10f;
@@ -22,6 +22,10 @@ private float findRange = 10f;
 	
 	// Update is called once per frame
 	void Update () {
+
+    if(dead){
+     return;
+    }
 
 	timer += Time.deltaTime;
 	if(timer < throwInterval){
@@ -74,9 +78,21 @@ private float findRange = 10f;
 
 		obj.GetComponent<Rigidbody>().AddForce(dir * 250);
 
-
-
-
-
 	}
+
+
+	private void OnCollisionEnter(Collision col){
+	 if(col.gameObject.tag.Equals("ThrowObject")){
+	  Die();
+	 }
+	}
+
+	private void Die(){
+	print("Die!");
+	iTween.ColorTo(gameObject, Color.gray, 0.5f);
+	Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+	 rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
+	dead = true;
+	}
+
 }
