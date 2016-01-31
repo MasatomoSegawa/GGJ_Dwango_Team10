@@ -79,7 +79,7 @@ public class Character : MonoBehaviour {
 	}
 
 	public void Accel(float dir){
-	if(isFreeze){
+	if(health <= 0 || isFreeze){
 	return;
 	}
 
