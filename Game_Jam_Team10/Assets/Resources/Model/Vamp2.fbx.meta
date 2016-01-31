@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: e085ac358371d4f9ea42b01e80317a9e
+timeCreated: 1454214312
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: _Body
+    100002: _Face
+    100004: Body
+    100006: Hair
+    100008: Hair_Back
+    100010: Hair_Front
+    100012: Hair_Up
+    100014: Head_J
+    100016: Hip_J
+    100018: Left_Elbow_J
+    100020: Left_Foot_J
+    100022: Left_Hand_J
+    100024: Left_Knee_J
+    100026: Left_Leg_J
+    100028: Left_Shoulder_J
+    100030: Mesh_Vamp
+    100032: Right_Elbow_J
+    100034: Right_Foot_J
+    100036: Right_Hand_J
+    100038: Right_Kenn_J
+    100040: Right_Leg_J
+    100042: Right_Shoulder_J
+    100044: Spine
+    100046: //RootNode
+    100048: Vamp_J
+    400000: _Body
+    400002: _Face
+    400004: Body
+    400006: Hair
+    400008: Hair_Back
+    400010: Hair_Front
+    400012: Hair_Up
+    400014: Head_J
+    400016: Hip_J
+    400018: Left_Elbow_J
+    400020: Left_Foot_J
+    400022: Left_Hand_J
+    400024: Left_Knee_J
+    400026: Left_Leg_J
+    400028: Left_Shoulder_J
+    400030: Mesh_Vamp
+    400032: Right_Elbow_J
+    400034: Right_Foot_J
+    400036: Right_Hand_J
+    400038: Right_Kenn_J
+    400040: Right_Leg_J
+    400042: Right_Shoulder_J
+    400044: Spine
+    400046: //RootNode
+    400048: Vamp_J
+    4300000: Hair_Back
+    4300002: Hair_Front
+    4300004: Hair_Up
+    4300006: _Face
+    4300008: _Body
+    9500000: //RootNode
+    13700000: _Body
+    13700002: _Face
+    13700004: Hair_Back
+    13700006: Hair_Front
+    13700008: Hair_Up
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Vamp_J
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_Leg_J
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_Leg_J
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_Knee_J
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_Kenn_J
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_Foot_J
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_Foot_J
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head_J
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_Shoulder_J
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_Shoulder_J
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_Elbow_J
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_Elbow_J
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_Hand_J
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_Hand_J
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Vamp2(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Mesh_Vamp
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Body
+      position: {x: -0, y: -0.0013501189, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: _Body
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: _Face
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hair
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hair_Back
+      position: {x: -0, y: -0.0013501189, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hair_Front
+      position: {x: -0, y: -0.0013501189, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hair_Up
+      position: {x: -0, y: -0.0013501189, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Vamp_J
+      position: {x: 0, y: 0.23278311, z: -0.0041268426}
+      rotation: {x: -0.49818307, y: 0.5018104, z: -0.49818307, w: 0.5018104}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hip_J
+      position: {x: 0.000000105307436, y: -0.0000000035311236, z: -7.1805187e-23}
+      rotation: {x: 0.0025648682, y: 0.7071021, z: 0.7071021, w: 0.0025648682}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_Leg_J
+      position: {x: -0.038984, y: 0.0439759, z: 2.4424906e-17}
+      rotation: {x: -0.020971997, y: 0.6015672, z: 0.798062, w: 0.02782225}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_Kenn_J
+      position: {x: 0.08574317, y: -0.0000000462743, z: 0.000000008444087}
+      rotation: {x: 0.9319529, y: 0.114514865, z: 0.018075824, w: -0.34354538}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_Foot_J
+      position: {x: 0.06901526, y: 0.000000047697558, z: -0.000000021500854}
+      rotation: {x: 0.34879696, y: 0.41580564, z: -0.5397871, w: 0.6434876}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_Leg_J
+      position: {x: -0.038984, y: -0.0439759, z: 3.6082247e-17}
+      rotation: {x: -0.798062, y: -0.02782225, z: -0.020971997, w: 0.6015672}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_Knee_J
+      position: {x: -0.08574317, y: 0.0000000462743, z: -0.000000008444087}
+      rotation: {x: 0.9319529, y: 0.114514865, z: 0.018075824, w: -0.34354538}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_Foot_J
+      position: {x: -0.06901526, y: -0.000000047697558, z: 0.000000021500854}
+      rotation: {x: 0.34879696, y: 0.41580564, z: -0.5397871, w: 0.6434876}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Spine
+      position: {x: -0.120885685, y: 2.6645352e-17, z: 1.6686693e-17}
+      rotation: {x: 0.7071021, y: -0.0025648682, z: -0.0025648682, w: 0.7071021}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Head_J
+      position: {x: -0.10379522, y: 2.304717e-17, z: 1.7763568e-17}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_Shoulder_J
+      position: {x: -0.023045838, y: -0.052158225, z: -8.881784e-18}
+      rotation: {x: 0.027280202, y: -0.02826873, z: 0.71516997, w: 0.6978457}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_Elbow_J
+      position: {x: -0.10950293, y: 7.105427e-17, z: 8.881784e-18}
+      rotation: {x: 0.0006248494, y: 0.07145143, z: -0.020740421, w: 0.99722826}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_Hand_J
+      position: {x: -0.07844361, y: -2.1316282e-16, z: 4.440892e-18}
+      rotation: {x: 0.01720488, y: -0.016998798, z: -0.70262796, w: 0.71114624}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_Shoulder_J
+      position: {x: -0.023045857, y: 0.052158196, z: 0.0000000027670783}
+      rotation: {x: 0.7151702, y: 0.6978456, z: -0.02728016, w: 0.02826869}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_Elbow_J
+      position: {x: 0.109502524, y: -0.00000022749042, z: 0.000000069746875}
+      rotation: {x: 0.0006248494, y: 0.07145143, z: -0.020740421, w: 0.99722826}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_Hand_J
+      position: {x: 0.07844446, y: 0.0000002484912, z: 0.00000004457966}
+      rotation: {x: 0.01720488, y: -0.016998798, z: -0.70262796, w: 0.71114624}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
