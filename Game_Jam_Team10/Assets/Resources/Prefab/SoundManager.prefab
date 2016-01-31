@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 433098}
-  - 114: {fileID: 11489792}
+  - 114: {fileID: 11411032}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11489792
+--- !u!114 &11411032
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -46,19 +46,55 @@ MonoBehaviour:
     BGM_Mute: 0
     SE_Mute: 0
   BGMs:
-  - clip: {fileID: 8300000, guid: ab5b15909bc3d42a0980e5934283f5c1, type: 3}
+  - clip: {fileID: 8300000, guid: cb656b2cee2694e1bbf54472ef90e1f4, type: 3}
     FadeFlag: 0
     m_VolumeBefore: 1
     m_VolumeAfter: 0
     m_FadeTime: 1
     m_Volume: 1
-  SEs:
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d74edcf6ac67f45b6bc4a4641f6133dd, type: 3}
     FadeFlag: 0
     m_VolumeBefore: 0
     m_VolumeAfter: 0
     m_FadeTime: 0
-    m_Volume: 0
+    m_Volume: 1
+  SEs:
+  - clip: {fileID: 8300000, guid: 71f5d96a104aa4eb78636bb07499e284, type: 3}
+    FadeFlag: 0
+    m_VolumeBefore: 0
+    m_VolumeAfter: 0
+    m_FadeTime: 0
+    m_Volume: 1
+  - clip: {fileID: 8300000, guid: 14d36f2f0ccf34cc7935a7d0d5f4ac7b, type: 3}
+    FadeFlag: 0
+    m_VolumeBefore: 0
+    m_VolumeAfter: 0
+    m_FadeTime: 0
+    m_Volume: 1
+  - clip: {fileID: 8300000, guid: 79bea655a0d514385afb2ffee7f74b74, type: 3}
+    FadeFlag: 0
+    m_VolumeBefore: 0
+    m_VolumeAfter: 0
+    m_FadeTime: 0
+    m_Volume: 1
+  - clip: {fileID: 8300000, guid: f6c05993a368745a4b17d8469369978b, type: 3}
+    FadeFlag: 0
+    m_VolumeBefore: 0
+    m_VolumeAfter: 0
+    m_FadeTime: 0
+    m_Volume: 1
+  - clip: {fileID: 8300000, guid: 1e588400ef5ee4869bd0cc5ea362f456, type: 3}
+    FadeFlag: 0
+    m_VolumeBefore: 0
+    m_VolumeAfter: 0
+    m_FadeTime: 0
+    m_Volume: 1
+  - clip: {fileID: 8300000, guid: d74edcf6ac67f45b6bc4a4641f6133dd, type: 3}
+    FadeFlag: 0
+    m_VolumeBefore: 0
+    m_VolumeAfter: 0
+    m_FadeTime: 0
+    m_Volume: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

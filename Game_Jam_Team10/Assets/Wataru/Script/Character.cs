@@ -101,9 +101,8 @@ public class Character : MonoBehaviour {
 	 health = 0;
 	 }
 
-	 if(health == 0){
+	 if(health <= 0){
 	  ChangeStateToDie();
-
 	 }
 
 	 damage_wait = damage_dur;

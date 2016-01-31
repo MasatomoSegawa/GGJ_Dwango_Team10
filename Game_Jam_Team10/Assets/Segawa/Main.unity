@@ -7242,7 +7242,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
       propertyPath: SEs.Array.size
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
+      propertyPath: BGMs.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 460556, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
       propertyPath: m_LocalPosition.x
@@ -7314,6 +7318,30 @@ Prefab:
       objectReference: {fileID: 8300000, guid: 1e588400ef5ee4869bd0cc5ea362f456, type: 3}
     - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
       propertyPath: SEs.Array.data[4].m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
+      propertyPath: BGMs.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d74edcf6ac67f45b6bc4a4641f6133dd, type: 3}
+    - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
+      propertyPath: BGMs.Array.data[1].m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
+      propertyPath: SEs.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d74edcf6ac67f45b6bc4a4641f6133dd, type: 3}
+    - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
+      propertyPath: SEs.Array.data[5].m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
+      propertyPath: BGMs.Array.data[0].m_FadeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422236, guid: 7d1725591fe5c4c7a9a074f3b52f9792, type: 2}
+      propertyPath: BGMs.Array.data[0].m_VolumeBefore
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
