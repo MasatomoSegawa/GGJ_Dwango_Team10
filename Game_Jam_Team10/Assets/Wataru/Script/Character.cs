@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Character : MonoBehaviour {
 
+	public Animator animator;
+
 	protected float base_speed = 200f;
 	protected float max_speed = 1;
 	protected Rigidbody rb;
@@ -31,14 +33,22 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	protected virtual void  Update () {
 
-	 if(attack_wait > 0){
-	  attack_wait -= Time.deltaTime;
-	 }
+		if (attack_wait > 0) {
+			attack_wait -= Time.deltaTime;
+			animator.SetBool ("attack_wait", false);
+		} else {
+			animator.SetBool ("attack_wait", true);
+		}
 
-		if(damage_wait > 0){
+		if (damage_wait > 0) {
 			damage_wait -= Time.deltaTime;
-	 }
+			animator.SetBool ("damage_wait", false);
 
+		} else {
+			animator.SetBool ("damage_wait", true);
+
+		}
+	
 	 // tmp
 	 Vector3 scl = this.transform.localScale;
 	 Vector3 newScl = new Vector3 ( (flipRight ? 1f : -1f), 1f, 1f);

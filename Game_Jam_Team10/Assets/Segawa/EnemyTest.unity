@@ -97,6 +97,8 @@ GameObject:
   - 92: {fileID: 66728173}
   - 124: {fileID: 66728172}
   - 81: {fileID: 66728171}
+  - 114: {fileID: 66728177}
+  - 114: {fileID: 66728176}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -171,6 +173,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &66728176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 66728170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95edcf6e32cf4072a6b7871456c220b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1822107917}
+--- !u!114 &66728177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 66728170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f9df3f69f45401aad09181d06f11b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chara: {fileID: 1822107917}
+  animator: {fileID: 491514579}
+--- !u!95 &491514579 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: e085ac358371d4f9ea42b01e80317a9e,
+    type: 3}
+  m_PrefabInternal: {fileID: 1717483924}
+--- !u!1001 &497091473
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 433098, guid: 0f1e54df819334d41b9f9679ab8d9997, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433098, guid: 0f1e54df819334d41b9f9679ab8d9997, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433098, guid: 0f1e54df819334d41b9f9679ab8d9997, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433098, guid: 0f1e54df819334d41b9f9679ab8d9997, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433098, guid: 0f1e54df819334d41b9f9679ab8d9997, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433098, guid: 0f1e54df819334d41b9f9679ab8d9997, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433098, guid: 0f1e54df819334d41b9f9679ab8d9997, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 433098, guid: 0f1e54df819334d41b9f9679ab8d9997, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0f1e54df819334d41b9f9679ab8d9997, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &985841514 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400046, guid: e085ac358371d4f9ea42b01e80317a9e, type: 3}
@@ -275,7 +349,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: e085ac358371d4f9ea42b01e80317a9e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: e085ac358371d4f9ea42b01e80317a9e, type: 3}
       propertyPath: m_LocalRotation.z
@@ -283,7 +357,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: e085ac358371d4f9ea42b01e80317a9e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: e085ac358371d4f9ea42b01e80317a9e, type: 3}
       propertyPath: m_RootOrder
@@ -319,7 +393,7 @@ Prefab:
       objectReference: {fileID: 9100000, guid: d2dceef7e6e594f95b16feec0d7acbe3, type: 2}
     - target: {fileID: 9500000, guid: e085ac358371d4f9ea42b01e80317a9e, type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e085ac358371d4f9ea42b01e80317a9e, type: 3}
@@ -417,6 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad25a6df1d634870bcdf48c820a8477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 491514579}
   max_health: 3
   health: 0
   isFreeze: 0

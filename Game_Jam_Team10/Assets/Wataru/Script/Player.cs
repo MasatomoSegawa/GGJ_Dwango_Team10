@@ -87,6 +87,7 @@ public override void ExecuteAttack ()
 	public override void ApplyDamage(int val){
      base.ApplyDamage(val);
 
+		animator.SetTrigger ("OnDamage");
 
 	 foreach(GameObject g in keeps){
 		g.AddComponent<Rigidbody>();

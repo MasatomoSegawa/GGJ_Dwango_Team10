@@ -6,6 +6,9 @@ public class InputManager : MonoBehaviour {
  [SerializeField]
  Character chara;
 
+	[SerializeField]
+	Animator animator;
+
 	// Update is called once per frame
 	void Update () {
 
@@ -17,17 +20,30 @@ public class InputManager : MonoBehaviour {
 	 }
 	  chara.Accel(inputX);
 	   
-	 if(Input.GetKey(KeyCode.Space)){
+		if(Input.GetKeyDown(KeyCode.Space)){
 	  chara.Jump();
+			animator.SetTrigger ("Jump");
 	 }
 
-	 if(Input.GetKey(KeyCode.Z)){
+		if(Input.GetKey(KeyCode.Z)){
 	  chara.Attack();
+			animator.SetTrigger ("OnAttack");
 	 }
 
 	 if(Input.GetKey(KeyCode.P)){
 	  GetComponent<Pause>().PauseFunc();
 	 }
+
+		Vector2 velocity = chara.GetComponent<Rigidbody> ().velocity;
+
+		animator.SetFloat ("VerticalSpeed", velocity.y);
+
+		if (velocity.y <= 0.5f) {
+			animator.SetBool ("isGround", true);
+		} else {
+			animator.SetBool ("isGround", false);
+
+		}
 	}
 
 
