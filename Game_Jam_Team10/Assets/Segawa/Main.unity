@@ -2795,6 +2795,10 @@ Prefab:
       propertyPath: quest
       value: 
       objectReference: {fileID: 114392199}
+    - target: {fileID: 9537158, guid: 0d09a08839ff64ed3ac8465448f48621, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d2dceef7e6e594f95b16feec0d7acbe3, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d09a08839ff64ed3ac8465448f48621, type: 2}
   m_IsPrefabParent: 0
