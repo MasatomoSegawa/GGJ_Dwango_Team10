@@ -33,7 +33,7 @@ public class EnemyController : MonoBehaviour {
 	 dead = true;
 	 this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.gray;
 	 Rigidbody rb = this.gameObject.AddComponent<Rigidbody>();
-		rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
+	 rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
 
 	}
 		
