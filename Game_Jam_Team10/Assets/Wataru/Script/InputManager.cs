@@ -34,17 +34,18 @@ public class InputManager : MonoBehaviour {
 	  GetComponent<Pause>().PauseFunc();
 	 }
 
-		Vector2 velocity = chara.GetComponent<Rigidbody> ().velocity;
+		Rigidbody rb;
+		if(rb = chara.GetComponent<Rigidbody> ()){
 
-		animator.SetFloat ("VerticalSpeed", velocity.y);
+			animator.SetFloat ("VerticalSpeed", rb.velocity.y);
 
-		if (velocity.y <= 0.5f) {
+			if (rb.velocity.y <= 0.5f) {
 			animator.SetBool ("isGround", true);
 		} else {
 			animator.SetBool ("isGround", false);
 
 		}
 	}
-
+	}
 
 }
