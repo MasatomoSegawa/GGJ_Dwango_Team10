@@ -14,13 +14,17 @@ private GameObject jack;
 	[SerializeField]
 	private Quest quest;
 
+	[SerializeField]
+	private GameObject effect_die;
 
-public delegate void OnDelivery();
-public OnDelivery onDelivery;
+    public delegate void OnDelivery();
+    public OnDelivery onDelivery;
 
 	private Vector3 throw_force = new Vector3(500f, 300f);
 
 	private List<GameObject> keeps = new List<GameObject>();
+
+	public override event Die die;
 
 
 	protected override void Awake ()
@@ -146,14 +150,42 @@ public override void ExecuteAttack ()
 	}
 
 	private void SendToUpper(GameObject obj, float delay){
+
+	 // 屍体を上に飛ばす演出
 		obj.transform.DOMoveY(5f, .7f).SetEase(Ease.InBack).SetDelay(delay).OnComplete(delegate {
 
+	// 消滅エフェクト
 	  GameObject e = Instantiate( effect_consume );
 	  e.transform.position = obj.transform.position;
+
+	  // 屍体オブジェクト削除
 		Destroy ( obj );
 		Destroy(e, 2f);
 
 	  });
+	}
+
+	protected override void ChangeStateToDie(){
+		StartCoroutine( ShowExpressionOfDie(2f) );
+	}
+
+	private IEnumerator ShowExpressionOfDie(float wait){
+
+	 Destroy( GetComponent<Rigidbody>() );
+	 this.GetComponent<BoxCollider>().enabled = false;
+
+	 // 砂になるエフェクト
+	 GameObject obj = Instantiate( effect_die );
+	 obj.transform.position = this.transform.position;
+
+	 iTween.FadeTo (this.gameObject, 0f, wait);
+
+	 yield return new WaitForSeconds( wait );
+
+	 Destroy(obj);
+	 if(die != null){
+	  die();
+	 }
 	}
 
 	private IEnumerator PlaySeWithDelay(float delay){
