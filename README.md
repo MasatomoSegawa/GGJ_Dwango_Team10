@@ -31,7 +31,7 @@ Clone respitory and launch Sacrifice Academy Beta.app
 **Objectives**
 - Avoid getting hit by garlic and vampire hunters
 
-- Collect downed vampire hunters and bring them to the glyps
+- Collect downed vampire hunters and bring them to the glyphs
 
 ####Credits
 
