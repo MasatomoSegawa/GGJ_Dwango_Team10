@@ -17,7 +17,7 @@ https://github.com/MasatomoSegawa/GGJ_Dwango_Team10.git
 ####Usage
 
 
-Clone respitory and launch Sacrifice Academy Beta.app
+Clone repository and launch Sacrifice Academy Beta.app
 
 ####Game Controls & Objectives
 
